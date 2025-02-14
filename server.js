@@ -36,7 +36,7 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(data);
         });
-    } else if (req.method === 'GET' && pathname === '/login') {
+    } else if (req.method === 'GET' && pathname === '/index') {
         fs.readFile(path.join(__dirname, 'login.html'), 'utf8', (err, data) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -84,7 +84,7 @@ const server = http.createServer((req, res) => {
                 });
             }
         });
-    } else if (req.method === 'POST' && pathname === '/login') {
+    } else if (req.method === 'POST' && pathname === '/index') {
         let data = '';
 
         req.on('data', (chunk) => {
